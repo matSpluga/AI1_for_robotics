@@ -1,0 +1,856 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/fsisa/ontologies/2026/0/untitled-ontology-6"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/fsisa/ontologies/2026/0/untitled-ontology-6">
+    <Prefix name="" IRI="http://www.semanticweb.org/fsisa/ontologies/2026/0/untitled-ontology-6/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Capacitors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComponentRemoval"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComponentType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConceptualEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachinePart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MagazineRack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MagazineSlot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nozzle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PCB"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PCBMovementTable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PCBPlacement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlacementHead"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resistors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Transistors"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnfixableProblem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualInspection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bigNozzle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ejectedComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smallNozzle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#detectsProblem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#equippedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#grips"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNextLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDisposedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isGrippedby"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPickedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlacedAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPositionedAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSome"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#movedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requiresComponentType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#resultOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#retrievedFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wasSubjectTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasXCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasYCoordinate"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Capacitors"/>
+        <Class IRI="#ComponentType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capacitors"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isGrippedby"/>
+            <Class IRI="#bigNozzle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <Class IRI="#PhysicalObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isPlacedAt"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#PCBPlacement"/>
+                <DataSomeValuesFrom>
+                    <DataProperty IRI="#hasXCoordinate"/>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                </DataSomeValuesFrom>
+                <DataSomeValuesFrom>
+                    <DataProperty IRI="#hasYCoordinate"/>
+                    <Datatype abbreviatedIRI="xsd:float"/>
+                </DataSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSome"/>
+            <Class IRI="#ComponentType"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#wasSubjectTo"/>
+            <Class IRI="#VisualInspection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isPickedBy"/>
+            <Class IRI="#Nozzle"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#retrievedFrom"/>
+            <Class IRI="#MagazineSlot"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComponentType"/>
+        <Class IRI="#ConceptualEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComponentType"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isAssignedToSlot"/>
+            <Class IRI="#MagazineSlot"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachinePart"/>
+        <Class IRI="#PhysicalObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MagazineRack"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MagazineRack"/>
+        <ObjectMaxCardinality cardinality="100">
+            <ObjectProperty IRI="#equippedWith"/>
+            <Class IRI="#MagazineSlot"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MagazineSlot"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MagazineSlot"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasAssignedComponentType"/>
+            <Class IRI="#ComponentType"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nozzle"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PCB"/>
+        <Class IRI="#PhysicalObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PCB"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isPositionedAt"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#PCBPlacement"/>
+                    <DataSomeValuesFrom>
+                        <DataProperty IRI="#hasXCoordinate"/>
+                        <Datatype abbreviatedIRI="xsd:float"/>
+                    </DataSomeValuesFrom>
+                    <DataSomeValuesFrom>
+                        <DataProperty IRI="#hasYCoordinate"/>
+                        <Datatype abbreviatedIRI="xsd:float"/>
+                    </DataSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#movedBy"/>
+                <Class IRI="#PCBMovementTable"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PCBMovementTable"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PCBPlacement"/>
+        <Class IRI="#ConceptualEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PCBPlacement"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#requiresComponentType"/>
+                <Class IRI="#ComponentType"/>
+            </ObjectSomeValuesFrom>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasXCoordinate"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+            <DataExactCardinality cardinality="1">
+                <DataProperty IRI="#hasYCoordinate"/>
+                <Datatype abbreviatedIRI="xsd:float"/>
+            </DataExactCardinality>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlacementHead"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlacementHead"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#equippedWith"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#bigNozzle"/>
+                <Class IRI="#smallNozzle"/>
+            </ObjectIntersectionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlacementHead"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#operates"/>
+            <ObjectUnionOf>
+                <Class IRI="#bigNozzle"/>
+                <Class IRI="#smallNozzle"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resistors"/>
+        <Class IRI="#ComponentType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resistors"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isGrippedby"/>
+            <Class IRI="#bigNozzle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transistors"/>
+        <Class IRI="#ComponentType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Transistors"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isGrippedby"/>
+            <Class IRI="#smallNozzle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnfixableProblem"/>
+        <Class IRI="#ConceptualEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnfixableProblem"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#resultOf"/>
+            <Class IRI="#VisualInspection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualInspection"/>
+        <Class IRI="#MachinePart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualInspection"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#detectsProblem"/>
+            <Class IRI="#UnfixableProblem"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bigNozzle"/>
+        <Class IRI="#Nozzle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bigNozzle"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#grips"/>
+            <ObjectUnionOf>
+                <Class IRI="#Capacitors"/>
+                <Class IRI="#Resistors"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ejectedComponent"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ejectedComponent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Component"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#wasSubjectTo"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#VisualInspection"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#detectsProblem"/>
+                        <Class IRI="#UnfixableProblem"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ejectedComponent"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isDisposedBy"/>
+            <Class IRI="#ComponentRemoval"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smallNozzle"/>
+        <Class IRI="#Nozzle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smallNozzle"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#grips"/>
+            <Class IRI="#Transistors"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Capacitors"/>
+        <Class IRI="#Resistors"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Capacitors"/>
+        <Class IRI="#Transistors"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Component"/>
+        <Class IRI="#PCB"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#MagazineRack"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#MagazineSlot"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#Nozzle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#PCBMovementTable"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#PlacementHead"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentRemoval"/>
+        <Class IRI="#VisualInspection"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ComponentType"/>
+        <Class IRI="#UnfixableProblem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ConceptualEntity"/>
+        <Class IRI="#PhysicalObject"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MachinePart"/>
+        <Class IRI="#PCB"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineRack"/>
+        <Class IRI="#MagazineSlot"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineRack"/>
+        <Class IRI="#Nozzle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineRack"/>
+        <Class IRI="#PCBMovementTable"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineRack"/>
+        <Class IRI="#PlacementHead"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineRack"/>
+        <Class IRI="#VisualInspection"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineSlot"/>
+        <Class IRI="#Nozzle"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineSlot"/>
+        <Class IRI="#PCBMovementTable"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineSlot"/>
+        <Class IRI="#PlacementHead"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MagazineSlot"/>
+        <Class IRI="#VisualInspection"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Nozzle"/>
+        <Class IRI="#PCBMovementTable"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Nozzle"/>
+        <Class IRI="#PlacementHead"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Nozzle"/>
+        <Class IRI="#VisualInspection"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PCBMovementTable"/>
+        <Class IRI="#PlacementHead"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PCBPlacement"/>
+        <Class IRI="#UnfixableProblem"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PlacementHead"/>
+        <Class IRI="#VisualInspection"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Resistors"/>
+        <Class IRI="#Transistors"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#bigNozzle"/>
+        <Class IRI="#smallNozzle"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#grips"/>
+        <ObjectProperty IRI="#isGrippedby"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#detectsProblem"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#equippedWith"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#grips"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasNextLocation"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isDisposedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isGrippedby"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPickedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPlacedAt"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPositionedAt"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isSome"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#movedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#operates"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#requiresComponentType"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#resultOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#retrievedFrom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#wasSubjectTo"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#detectsProblem"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#equippedWith"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#grips"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasNextLocation"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isDisposedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isGrippedby"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPickedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPlacedAt"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isPositionedAt"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#movedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#operates"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#requiresComponentType"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#resultOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#retrievedFrom"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#wasSubjectTo"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#detectsProblem"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#equippedWith"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#grips"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasNextLocation"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isDisposedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isGrippedby"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isPickedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isPlacedAt"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isPositionedAt"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#movedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#operates"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#requiresComponentType"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#resultOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#retrievedFrom"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#wasSubjectTo"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#detectsProblem"/>
+        <Class IRI="#VisualInspection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#MagazineRack"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#PlacementHead"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#grips"/>
+        <Class IRI="#Nozzle"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+        <Class IRI="#MagazineSlot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNextLocation"/>
+        <Class IRI="#PCBPlacement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+        <Class IRI="#ComponentType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDisposedBy"/>
+        <Class IRI="#ejectedComponent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isGrippedby"/>
+        <Class IRI="#ComponentType"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPickedBy"/>
+        <Class IRI="#Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPlacedAt"/>
+        <Class IRI="#Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPositionedAt"/>
+        <Class IRI="#PCB"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSome"/>
+        <Class IRI="#Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#movedBy"/>
+        <Class IRI="#PCB"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operates"/>
+        <Class IRI="#PlacementHead"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requiresComponentType"/>
+        <Class IRI="#PCBPlacement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#resultOf"/>
+        <Class IRI="#UnfixableProblem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#retrievedFrom"/>
+        <Class IRI="#Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wasSubjectTo"/>
+        <Class IRI="#Component"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#detectsProblem"/>
+        <Class IRI="#UnfixableProblem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#MagazineSlot"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#bigNozzle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#smallNozzle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#grips"/>
+        <Class IRI="#ComponentType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAssignedComponentType"/>
+        <Class IRI="#ComponentType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNextLocation"/>
+        <Class IRI="#PCBPlacement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isAssignedToSlot"/>
+        <Class IRI="#MagazineSlot"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDisposedBy"/>
+        <Class IRI="#ComponentRemoval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isGrippedby"/>
+        <Class IRI="#Nozzle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPickedBy"/>
+        <Class IRI="#Nozzle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlacedAt"/>
+        <Class IRI="#PCBPlacement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPositionedAt"/>
+        <Class IRI="#PCBPlacement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSome"/>
+        <Class IRI="#ComponentType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#movedBy"/>
+        <Class IRI="#PCBMovementTable"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operates"/>
+        <Class IRI="#Nozzle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requiresComponentType"/>
+        <Class IRI="#ComponentType"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#resultOf"/>
+        <Class IRI="#VisualInspection"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#retrievedFrom"/>
+        <Class IRI="#MagazineSlot"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wasSubjectTo"/>
+        <Class IRI="#VisualInspection"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
